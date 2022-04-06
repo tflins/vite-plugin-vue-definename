@@ -9,5 +9,6 @@
     "emitDeclarationOnly": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*", "test/**/*"]
+  "types": ["vite/client"],
+  "include": ["src/**/*", "test/**/*", "typings/**/*.d.ts"]
 }

@@ -24,11 +24,10 @@ export function getDefineNameCallExpression(scriptSetup: SFCScriptBlock) {
 }
 
 export function getDefineNameCallExpressionArgument(
-  scriptSetup: SFCScriptBlock
+  callExpression: any
 ) {
-  const callExpression = getDefineNameCallExpression(scriptSetup)
   if (!callExpression) return null
-  return callExpression.expression.arguments[0]
+  return callExpression.expression.arguments[0].value
 }
 
 export default function defineName(): Plugin {
@@ -47,12 +46,13 @@ export default function defineName(): Plugin {
       }
 
       const { source, scriptSetup } = descriptor
-      const componentName = getDefineNameCallExpressionArgument(scriptSetup)
+      const defineNameCallExpression = getDefineNameCallExpression(scriptSetup)
+      const componentName = getDefineNameCallExpressionArgument(defineNameCallExpression)
 
       if (!componentName) return
 
-      const s = new MagicString(source)
-      s.prepend(`
+      const str = new MagicString(source)
+      str.prepend(`
         <script lang="${scriptSetup.attrs.lang || 'js'}">
           export default {
             name: '${componentName}'
@@ -60,14 +60,19 @@ export default function defineName(): Plugin {
         </script>
       `)
 
+      str.remove(
+        scriptSetup.loc.start.offset + defineNameCallExpression.start,
+        scriptSetup.loc.start.offset + defineNameCallExpression.end
+      )
+
+      const map = str.generateMap({
+        source: id,
+        includeContent: true
+      })
+
       return {
-        code: s.toString(),
-        get map() {
-          return s.generateMap({
-            source: id,
-            includeContent: true
-          })
-        }
+        code: str.toString(),
+        map,
       }
     }
   }
