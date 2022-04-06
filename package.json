@@ -32,6 +32,14 @@
     "build": "vite build",
     "dev": "vite"
   },
+  "keywords": [
+    "defineName",
+    "vite",
+    "vite-plugin",
+    "vue",
+    "vue-plugin",
+    "vue3"
+  ],
   "author": "",
   "license": "ISC",
   "description": ""
