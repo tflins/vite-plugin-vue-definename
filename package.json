@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "vite": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@vue/compiler-sfc": "^3.2.31"
+  },
+  "name": "vite-plugin-vue-definname",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
