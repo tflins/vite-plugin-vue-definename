@@ -13,7 +13,7 @@ declare global {
 export const DEFINE_NAME = 'defineName'
 
 export function getDefineNameCallExpression(scriptSetup: SFCScriptBlock) {
-  const callExpressionList = scriptSetup.scriptSetupAst.filter(
+  const callExpressionList = scriptSetup.scriptSetupAst!.filter(
     (node) =>
       node.type === 'ExpressionStatement' &&
       node.expression.type === 'CallExpression' &&

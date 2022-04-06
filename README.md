@@ -1,1 +1,1 @@
-# vite-plugin-vue-definname
+# vite-plugin-vue-definename

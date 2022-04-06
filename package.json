@@ -8,17 +8,17 @@
     "typescript": "^4.6.3",
     "vite-plugin-dts": "^1.0.5"
   },
-  "name": "vite-plugin-vue-definname",
+  "name": "vite-plugin-vue-definename",
   "version": "1.0.0",
   "files": [
     "dist"
   ],
-  "main": "./dist/vite-plugin-vue-definname.es.js",
-  "module": "./dist/vite-plugin-vue-definname.es.js",
+  "main": "./dist/vite-plugin-vue-definename.es.js",
+  "module": "./dist/vite-plugin-vue-definename.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-plugin-vue-definname.es.js",
-      "require": "./dist/vite-plugin-vue-definname.es.js"
+      "import": "./dist/vite-plugin-vue-definename.es.js",
+      "require": "./dist/vite-plugin-vue-definename.es.js"
     }
   },
   "types": "dist/index.d.ts",
