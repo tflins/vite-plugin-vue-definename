@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "outDir": "lib",
+    "lib": ["ES2015"],
+    "declaration": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "emitDeclarationOnly": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*", "test/**/*"]
+}

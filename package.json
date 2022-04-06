@@ -4,17 +4,30 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
-    "@vue/compiler-sfc": "^3.2.31"
+    "@vue/compiler-sfc": "^3.2.31",
+    "typescript": "^4.6.3",
+    "vite-plugin-dts": "^1.0.5"
   },
   "name": "vite-plugin-vue-definname",
   "version": "1.0.0",
-  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vite-plugin-vue-definname.es.js",
+  "module": "./dist/vite-plugin-vue-definname.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-plugin-vue-definname.es.js",
+      "require": "./dist/vite-plugin-vue-definname.es.js"
+    }
+  },
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"build": "vite build"
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
