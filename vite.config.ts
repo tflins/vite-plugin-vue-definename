@@ -7,12 +7,12 @@ import defineName from './src'
 
 const isBuild = process.env.NODE_ENV === 'production'
 
-const buildConfig = {
+const buildConfig: Partial<typeof defineConfig> = {
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'vite-plugin-vue-definename',
-      formats: ['es', 'umd']
+      formats: ['es', 'cjs']
     },
     rollupOptions: {
       external: ['vite', '@vue/compiler-sfc']

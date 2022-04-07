@@ -12,18 +12,12 @@
     "vue": "^3.2.31"
   },
   "name": "vite-plugin-vue-definename",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "files": [
     "dist"
   ],
-  "main": "dist/vite-plugin-vue-definename.es.js",
-  "module": "dist/vite-plugin-vue-definename.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/vite-plugin-vue-definename.es.js",
-      "require": "./dist/vite-plugin-vue-definename.es.js"
-    }
-  },
+  "main": "dist/vite-plugin-vue-definename.cjs.js",
+  "module": "dist/vite-plugin-vue-definename.cjs.js",
   "types": "dist/src/index.d.ts",
   "directories": {
     "test": "tests"
