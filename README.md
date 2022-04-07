@@ -7,7 +7,13 @@ vite 插件，在 vue3 setup-script 中使用 `defineName` 来为组件命名。
 ## 如何使用
 
 ```bash
-npm install vite-plugin-vue-definename
+npm install vite-plugin-vue-definename -D
+
+or 
+
+pnpm add vite-plugin-vue-definename -D
+
+yarn add vite-plugin-vue-definename -D
 ```
 
 在 vite 配置文件中
@@ -27,6 +33,12 @@ export default defineConfig({
 <script lang="ts" setup>
 defineName('MyComponent')
 </script>
+```
+
+typescript 支持，在 tsconfig.json 中，添加
+
+```json
+"types": ["vite-plugin-vue-definename"]
 ```
 
 ---
