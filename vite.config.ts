@@ -5,8 +5,9 @@ import vue from '@vitejs/plugin-vue'
 
 import defineName from './src'
 
-export default defineConfig({
-  root: resolve(__dirname, './test'),
+const isBuild = process.env.NODE_ENV === 'production'
+
+const buildConfig = {
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -14,8 +15,17 @@ export default defineConfig({
       formats: ['es', 'umd']
     },
     rollupOptions: {
-      external: ['vite', '@vue/compiler-sfc'],
+      external: ['vite', '@vue/compiler-sfc']
     }
   },
-  plugins: [dts(), defineName(), vue()],
+  plugins: [dts()]
+}
+
+const devConfig = {
+  root: resolve(__dirname, './test'),
+  plugins: [defineName(), vue()]
+}
+
+export default defineConfig({
+  ...(isBuild ? buildConfig : devConfig)
 })
