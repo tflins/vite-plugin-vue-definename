@@ -7,8 +7,9 @@
     "strictNullChecks": true,
     "downlevelIteration": true,
     "emitDeclarationOnly": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strict": true
   },
   "types": ["vite/client"],
-  "include": ["src/**/*", "test/**/*", "typings/**/*.d.ts"]
+  "include": ["src/**/*", "example", "typings/**/*.d.ts"]
 }

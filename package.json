@@ -1,24 +1,29 @@
 {
-  "dependencies": {
-    "vite": "^2.9.1"
-  },
+  "version": "2.0.0",
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^17.0.23",
-    "@vitejs/plugin-vue": "^2.3.1",
-    "@vue/compiler-sfc": "^3.2.31",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/compiler-sfc": "^3.4.27",
     "cross-env": "^7.0.3",
     "typescript": "^4.6.3",
-    "vite-plugin-dts": "^1.0.5",
-    "vue": "^3.2.31"
+    "vite-plugin-dts": "^3.9.1",
+    "vue": "^3.4.27",
+    "vite": "^5.2.13"
   },
   "name": "vite-plugin-vue-definename",
-  "version": "1.0.8",
   "files": [
     "dist"
   ],
-  "main": "dist/vite-plugin-vue-definename.cjs.js",
-  "module": "dist/vite-plugin-vue-definename.cjs.js",
-  "types": "dist/src/index.d.ts",
+  "main": "./dist/vite-plugin-vue-definename.js",
+  "module": "./dist/vite-plugin-vue-definename.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-plugin-vue-definename.mjs",
+      "require": "./dist/vite-plugin-vue-definename.js"
+    }
+  },
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "tests"
   },
