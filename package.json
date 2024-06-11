@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.2",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^17.0.23",
@@ -20,10 +20,11 @@
   "exports": {
     ".": {
       "import": "./dist/vite-plugin-vue-definename.mjs",
-      "require": "./dist/vite-plugin-vue-definename.js"
+      "require": "./dist/vite-plugin-vue-definename.js",
+      "types": "./dist/index.d.ts"
     }
   },
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "directories": {
     "test": "tests"
   },
